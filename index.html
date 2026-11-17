@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>국민과 함께 시작하는 2028년 제주4·3 80주년 · 국민 의견수렴</title>
-<meta name="description" content="2028년 제주4·3 80주년, 여러분의 생각이 80주년의 방향이 됩니다. 2026. 11. 20. ~ 12. 21. 국민 의견수렴 설문에 참여해 주세요.">
+<title>국민과 함께 시작하는 2028년 제주4·3 제80주년 · 국민 의견수렴</title>
+<meta name="description" content="2028년 제주4·3 제80주년, 여러분의 생각이 제80주년의 방향이 됩니다. 2026. 11. 20. ~ 12. 21. 국민 의견수렴 설문에 참여해 주세요.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#FAF8F3">
 <meta property="og:type" content="website">
-<meta property="og:title" content="국민과 함께 시작하는 2028년 제주4·3 80주년">
-<meta property="og:description" content="여러분의 생각이 80주년의 방향이 됩니다. 국민 의견수렴 2026. 11. 20. ~ 12. 21.">
+<meta property="og:title" content="국민과 함께 시작하는 2028년 제주4·3 제80주년">
+<meta property="og:description" content="여러분의 생각이 제80주년의 방향이 됩니다. 국민 의견수렴 2026. 11. 20. ~ 12. 21.">
 <meta property="og:image" content="img/og.jpg">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,6 +112,7 @@ a{color:inherit}
 .sec-hd{margin-bottom:22px}
 .sec-hd h2,.h2{font-size:clamp(1.55rem,1.2rem + 1.7vw,2.4rem);margin-top:10px}
 .sec-hd p{color:var(--muted);margin-top:8px}
+.sec-hd .sv-note{font-size:.88rem;margin-top:12px}
 @media (min-width:900px){.sec{padding-block:84px}.sec-hd{margin-bottom:32px}}
 
 /* why */
@@ -130,6 +131,10 @@ a{color:inherit}
 .swipe{list-style:none;margin:0 calc(var(--gut) * -1);padding:4px var(--gut) 14px;display:grid;grid-auto-flow:column;grid-auto-columns:84%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gut);scrollbar-width:none}
 .swipe::-webkit-scrollbar{display:none}
 .swipe li{scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 20px 6px;display:flex;flex-direction:column}
+.swipe .ph{margin:-20px -20px 16px;border-radius:17px 17px 0 0;overflow:hidden;background:#EDEAE2}
+.swipe .ph img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 35%}
+.swipe .ph.doc img{object-fit:contain;background:#fff}
+.swipe .ph figcaption{font-size:.78rem;color:var(--muted);padding:7px 20px 8px;background:var(--surface);border-bottom:1px solid var(--line)}
 .swipe .n{font-family:var(--f-display);font-weight:800;font-size:2.2rem;line-height:1;color:var(--red)}
 .swipe h3{font-size:1.2rem;margin-top:10px}
 .swipe .key{margin-top:6px;font-weight:500;flex:1}
@@ -139,6 +144,7 @@ a{color:inherit}
 .swipe summary::after,.faq summary::after{content:"+";font-weight:400;font-size:1.3rem;line-height:1}
 .swipe details[open] summary::after,.faq details[open] summary::after{content:"–"}
 .swipe details p{font-size:.93rem;color:var(--muted);padding-bottom:12px}
+.swipe details p+p{padding-top:8px}
 .swipe details a{font-weight:700;color:var(--red)}
 .hint{font-size:.8rem;color:var(--muted);text-align:right;margin-top:-4px}
 @media (min-width:860px){
@@ -152,7 +158,8 @@ a{color:inherit}
 .scroll>i{position:absolute;left:50%;top:-34px;width:150px;height:30px;margin-left:-75px;border:1px solid #9DB3A6;border-bottom:0;border-radius:50% 50% 0 0/100% 100% 0 0}
 .scroll h3{font-size:1.05rem;color:var(--navy);margin-bottom:8px}
 .rail{list-style:none;margin:0;padding:0;display:grid}
-.rail li{position:relative;display:grid;grid-template-columns:6.2em 1fr;gap:10px;padding:8px 0 8px 24px}
+.rail-b{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.rail li{position:relative;display:grid;grid-template-columns:6.6em 1fr;gap:10px;padding:8px 0 8px 24px}
 .rail li::before{content:"";position:absolute;left:4px;top:0;bottom:0;width:1.5px;background:var(--thread);opacity:.55}
 .rail li:first-child::before{top:50%}.rail li:last-child::before{bottom:50%}
 .rail li::after{content:"";position:absolute;left:0;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--surface);border:1.5px solid var(--thread)}
@@ -162,8 +169,11 @@ a{color:inherit}
 .rail li.now time,.rail li.now span{color:var(--red);font-weight:700}
 @media (min-width:980px){
   .scroll{padding:28px 32px 30px}
-  .rail{grid-template-columns:repeat(8,1fr)}
-  .rail li{display:block;padding:24px 6px 0 0}
+  .rail-a{grid-template-columns:repeat(5,1fr)}
+  .rail-b{grid-template-columns:repeat(6,1fr);row-gap:22px;margin-top:22px;padding-top:22px}
+  .rail-b li:nth-child(6)::before{right:calc(100% - 10px)}
+  .rail-b li:nth-child(7)::before{left:0}
+  .rail li{display:block;padding:24px 10px 0 0}
   .rail li::before{left:0;right:0;top:4px;bottom:auto;width:auto;height:1.5px}
   .rail li:first-child::before{top:4px}.rail li:last-child::before{bottom:auto;right:calc(100% - 10px)}
   .rail li::after{top:0;margin-top:0}
@@ -196,8 +206,8 @@ legend.q{padding:0;font-family:var(--f-display);font-weight:800;font-size:clamp(
 .opts{display:grid;gap:10px}
 .opt{position:relative;display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;cursor:pointer;background:var(--bg);min-height:58px;transition:border-color .15s,background .15s}
 .opt input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
-.opt .dot{width:24px;height:24px;border-radius:50%;border:2px solid #A9A498;background:var(--surface);margin-top:1px;display:grid;place-items:center}
-.opt .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:transparent}
+.opt .dot{width:24px;height:24px;border-radius:7px;border:2px solid #A9A498;background:var(--surface);margin-top:1px;display:grid;place-items:center}
+.opt .dot::after{content:"";width:12px;height:12px;border-radius:3px;background:transparent}
 .opt span.t{font-weight:500;line-height:1.55}
 .opt:has(input:checked){border-color:var(--red);background:var(--red-tint)}
 .opt:has(input:checked) .dot{border-color:var(--red)}
@@ -299,9 +309,9 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
 
 <header class="hd">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="국민과 함께 시작하는 2028년 제주4·3 80주년 처음으로">
+    <a class="brand" href="#top" aria-label="국민과 함께 시작하는 2028년 제주4·3 제80주년 처음으로">
       <img src="img/flower.webp" width="32" height="32" alt="">
-      <span><b><span class="wide">국민과 함께 시작하는 </span>2028년 제주4·3 80주년</b><small>국민 의견수렴</small></span>
+      <span><b><span class="wide">국민과 함께 시작하는 </span>2028년 제주4·3 제80주년</b><small>국민 의견수렴</small></span>
     </a>
     <nav class="nav" aria-label="주 메뉴">
       <a href="#why">설문취지</a><a href="#learn">제주4·3 알아보기</a><a href="#survey">설문 참여</a><a href="#use">반영 과정</a><a href="#faq">자주 묻는 질문</a>
@@ -326,7 +336,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
         <p class="status" id="status" data-state="soon"><i aria-hidden="true"></i><span>2026. 11. 20 시작</span></p>
         <p class="kicker">국민 의견수렴</p>
         <h1>여러분의 생각이<br><em>2028년 제주4·3<br>제80주년의 방향</em>이 됩니다</h1>
-        <p class="sub">국민과 함께 시작하는 2028년 제주4·3 80주년</p>
+        <p class="sub">국민과 함께 시작하는 2028년 제주4·3 제80주년</p>
         <div class="rule" aria-hidden="true"></div>
         <p class="date">2026. 11. 20. ~ 12. 21.</p>
         <p class="who">전 국민 누구나 참여 가능</p>
@@ -349,9 +359,9 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
       <h2 class="why-q" id="why-h">2028년 제주4·3 제80주년은 지난 역사를 돌아보는 데 그치지 않고, 그 기억을 바탕으로 <em>더 나은 미래를 함께 그려가는</em> 해입니다.</h2>
       <div class="why-more">
         <p>제주4·3은 우리 현대사의 아픔을 넘어 평화와 인권, 화해와 상생의 가치를 일깨우는 소중한 역사입니다.</p>
-        <p>2028년 제주4·3 제80주년을 맞아 희생자를 추모하고, 제주4·3의 역사적 의미와 평화·인권의 가치를 널리 알리기 위한 다양한 기념사업을 준비하고 있습니다.</p>
-        <p>이번 설문조사를 통해 제80주년 기념사업 추진 방향에 대한 국민 여러분의 다양한 의견을 듣고, 모두가 공감하고 함께 참여할 수 있는 기념사업의 방향을 함께 모색하고자 합니다.</p>
-        <p>여러분의 소중한 의견이 제주4·3의 기억과 가치를 미래세대에 전하고, 제80주년을 함께 만들어가는 밑거름이 될 수 있도록 많은 관심과 참여를 부탁드립니다.</p>
+        <p>2028년 제주4·3 제80주년을 맞아 희생자를 추모하고,<br>제주4·3의 역사적 의미와 평화·인권의 가치를 널리 알리기 위한 다양한 기념사업을 준비하고 있습니다.</p>
+        <p>이번 설문조사를 통해 제80주년 기념사업 추진 방향에 대한 국민 여러분의 다양한 의견을 듣고,<br>모두가 공감하고 함께 참여할 수 있는 기념사업의 방향을 함께 모색하고자 합니다.</p>
+        <p>여러분의 소중한 의견이 제주4·3의 기억과 가치를 미래세대에 전하고,<br>제80주년을 함께 만들어가는 밑거름이 될 수 있도록 많은 관심과 참여를 부탁드립니다.</p>
       </div>
       <ul class="asks" aria-label="국민께 묻는 세 가지">
         <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg><b>의미와 가치</b><span>제80주년은 어떤 해여야 할까</span></li>
@@ -365,29 +375,39 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
     <div class="wrap">
       <div class="sec-hd"><p class="kicker">제주4·3 알아보기</p><h2 id="learn-h">제주4·3, 이것만은 알아두세요.</h2></div>
       <ol class="swipe" tabindex="0" aria-label="제주4·3 세 가지">
-        <li><span class="n" aria-hidden="true">1</span><h3>제주4·3이란?</h3>
+        <li><figure class="ph"><img src="img/photo_history.webp" width="1200" height="894" alt="숲속 풀밭에 모여 앉아 있는 제주 주민들과 아이들의 흑백 사진" loading="lazy" decoding="async"><figcaption>산으로 간 주민들</figcaption></figure><span class="n" aria-hidden="true">1</span><h3>제주4·3이란?</h3>
           <p class="key">1947년부터 1954년까지, 제주에서 수많은 주민이 희생된 역사적 사건</p>
-          <details><summary>자세히</summary><p>제주4·3은 1947년 3월 1일 경찰의 발포사건을 기점으로 하여, 경찰·서북청년단의 탄압에 대한 저항과 단선·단정 반대를 기치로 1948년 4월 3일 남로당 제주도당 무장대가 무장봉기한 이래 1954년 9월 21일 한라산 금족지역이 전면 개방될 때까지 제주도에서 발생한 무장대와 토벌대간의 무력충돌과 토벌대의 진압과정에서 수많은 주민들이 희생당한 사건입니다.</p><p><a href="https://jeju43peace.or.kr/kor/sub01_01_01.do" target="_blank" rel="noopener">제주4·3평화재단 제주4·3 소개 ↗</a></p></details></li>
-        <li><span class="n" aria-hidden="true">2</span><h3>진상규명과 명예회복</h3>
-          <p class="key">제주4·3특별법 제정에서 정부의 진상조사와 공식 사과, 희생자·유족의 명예회복과 유네스코 세계기록유산 등재까지</p>
+          <details><summary>자세히</summary><p>제주4·3은 1947년 3월 1일을 기점으로 1948년 4월 3일 발생한 소요사태 및 1954년 9월 21일까지 제주도에서 발생한 무력충돌과 그 진압과정에서 주민들이 희생당한 사건입니다.</p><p><a href="https://jeju43peace.or.kr/kor/sub01_01_01.do" target="_blank" rel="noopener">제주4·3평화재단 제주4·3 소개 ↗</a></p></details></li>
+        <li><figure class="ph"><img src="img/photo_truth_1998.webp" width="1200" height="708" style="object-position:center 88%" alt="‘50년을 넘길 수 없다! 4·3 진실 규명하라!’ 현수막을 들고 행진하는 사람들" loading="lazy" decoding="async"><figcaption>제주4·3 제50주년 특별법 제정 운동 (1998)</figcaption></figure><span class="n" aria-hidden="true">2</span><h3>진상규명과 명예회복</h3>
+          <p class="key">제주4·3특별법 제정에서 정부의 진상조사와 공식 사과, 희생자·유족의 명예회복과 제주4·3기록물의 유네스코 세계기록유산 등재까지</p>
           <details><summary>자세히</summary><p>2000년 제주4·3특별법 제정을 시작으로 진상규명과 명예회복을 위한 본격적인 노력이 시작되었습니다. 2003년에는 정부의 「제주4·3사건 진상조사보고서」가 확정되고 대통령의 공식 사과가 이루어졌습니다.</p><p>이후 희생자 추념일의 국가기념일 지정, 희생자 보상, 유해 발굴과 신원 확인 등 희생자의 명예회복과 실질적 피해 회복을 위한 노력이 이어지고 있습니다. 특히 2025년에는 제주4·3 기록물 14,673건이 유네스코 세계기록유산에 등재되어 제주4·3의 역사적 진실과 기억을 세계와 공유하고, 평화와 인권의 가치를 국제사회에 알리는 계기를 마련했습니다.</p></details></li>
-        <li><span class="n" aria-hidden="true">3</span><h3>평화와 인권의 미래</h3>
+        <li><figure class="ph doc"><img src="img/photo_unesco.webp" width="1127" height="798" alt="제주4·3기록물의 유네스코 세계기록유산 등재인증서" loading="lazy" decoding="async"><figcaption>유네스코 세계기록유산 등재인증서 (2025. 4. 17.)</figcaption></figure><span class="n" aria-hidden="true">3</span><h3>평화와 인권의 미래</h3>
           <p class="key">아픔의 기억을 넘어, 평화와 인권의 가치를 미래로</p>
-          <details><summary>자세히</summary><p>제주4·3은 과거의 아픔을 기억하는 데 그치지 않고, 평화와 인권, 화해와 상생의 가치를 되새기며 미래세대에 전해야 할 소중한 역사입니다.</p><p>2028년 제주4·3 제80주년은 이러한 역사적 교훈과 가치를 되새기고, 우리가 함께 만들어갈 미래를 그려가는 뜻깊은 해입니다. 이번 설문조사를 통해 국민 여러분의 다양한 의견을 모아 모두가 공감하고 함께 참여할 수 있는 제80주년 기념사업의 방향을 모색하고자 합니다.</p></details></li>
+          <details><summary>자세히</summary><p>제주4·3은 과거의 아픔을 기억하는 데 그치지 않고, 평화와 인권, 화해와 상생의 가치를 되새기며 미래세대에 전해야 할 소중한 역사입니다.</p><p>2028년 제주4·3 제80주년은 이러한 역사적 교훈과 가치를 되새기고, 우리가 함께 만들어갈 미래를 그려가는 뜻깊은 해입니다.</p><p>이번 설문조사를 통해 국민 여러분의 다양한 의견을 모아 모두가 공감하고 함께 참여할 수 있는 제80주년 기념사업의 방향을 모색하고자 합니다.</p></details></li>
       </ol>
       <p class="hint" aria-hidden="true">옆으로 넘겨 보세요 →</p>
       <div class="scroll">
         <i aria-hidden="true"></i>
-        <h3>1947년부터 2028년까지</h3>
-        <ol class="rail" aria-label="제주4·3 연표">
-          <li><time datetime="1947-03-01">1947. 3. 1</time><span>사건의 기점</span></li>
-          <li><time datetime="1948-04-03">1948. 4. 3</time><span>무장봉기</span></li>
-          <li><time datetime="1954-09-21">1954. 9. 21</time><span>7년 7개월 만에 종료</span></li>
-          <li><time datetime="2000">2000</time><span>특별법 제정</span></li>
-          <li><time datetime="2003">2003</time><span>대통령 공식 사과</span></li>
+        <h3>제주4·3의 역사와 기억</h3>
+        <ol class="rail rail-a" aria-label="제주4·3 연표: 1947년부터 1954년까지">
+          <li><time datetime="1947-03-01">1947. 3. 1.</time><span>4·3의 도화선, 3·1절 발포사건</span></li>
+          <li><time datetime="1948-04-03">1948. 4. 3.</time><span>무장봉기 시작</span></li>
+          <li><time datetime="1948-10-17">1948. 10. 17.</time><span>중산간마을 초토화작전 전개</span></li>
+          <li><time datetime="1950-07">1950. 7월</time><span>한국전쟁 발발 이후 예비검속으로 인한 집단학살</span></li>
+          <li><time datetime="1954-09-21">1954. 9. 21.</time><span>한라산 금족령 해제<br>7년7개월 만에 4·3 공식적으로 종식</span></li>
+        </ol>
+        <ol class="rail rail-b" aria-label="제주4·3 연표: 1989년부터 2028년까지">
+          <li><time datetime="1989">1989</time><span>제1회 4·3추모제 봉행</span></li>
+          <li><time datetime="1994">1994</time><span>유족회·사월제공준위 공동 주최<br>첫 합동위령제 봉행</span></li>
+          <li><time datetime="1998">1998</time><span>제주4·3 제50주년 전후<br>4·3특별법 제정 운동</span></li>
+          <li><time datetime="2000">2000</time><span>제주4·3특별법 제정</span></li>
+          <li><time datetime="2003">2003</time><span>정부의 진상보고서 확정<br>대통령 공식 사과</span></li>
+          <li><time datetime="2005">2005</time><span>제주 세계평화의 섬 지정</span></li>
+          <li><time datetime="2013">2013</time><span>4·3유족회와 재향경우회 화해·상생 선언</span></li>
           <li><time datetime="2014">2014</time><span>국가기념일 지정</span></li>
+          <li><time datetime="2018">2018</time><span>제70주년 제주4·3희생자 추념식 봉행</span></li>
           <li><time datetime="2025">2025</time><span>세계기록유산 등재</span></li>
-          <li class="now"><time datetime="2028-04-03">2028. 4. 3</time><span>제80주년</span></li>
+          <li class="now"><time datetime="2028-04-03">2028. 4. 3.</time><span>제주4·3 제80주년</span></li>
         </ol>
       </div>
     </div>
@@ -395,7 +415,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
 
   <section class="sec survey" id="survey" aria-labelledby="sv-h">
     <div class="wrap">
-      <div class="sec-hd"><p class="kicker">국민 의견수렴 설문</p><h2 id="sv-h">제80주년, 어떤 모습이면 좋을까요?</h2><p>2028년 제주4·3 제80주년을 어떻게 기억하고 기념하면 좋을까요? 국민 여러분의 소중한 의견을 모아 함께 만들어가겠습니다.</p><p>회원가입 없이 참여할 수 있으며, 각 문항에서 원하는 항목을 선택해 주세요.</p></div>
+      <div class="sec-hd"><p class="kicker">국민 의견수렴 설문</p><h2 id="sv-h">제80주년, 어떤 모습이면 좋을까요?</h2><p>2028년 제주4·3 제80주년을 어떻게 기억하고 기념하면 좋을까요? 국민 여러분의 소중한 의견을 모아 함께 만들어가겠습니다.</p><p>회원가입 없이 참여할 수 있으며, 각 문항에서 원하는 항목을 선택해 주세요.</p><p class="sv-note">※ 제출하신 의견은 제주4·3 제80주년 기념사업 추진을 위한 공적 목적으로 활용되며, 제출된 의견은 반환되지 않습니다. 설문에 참여하시면 이에 동의한 것으로 간주됩니다.</p></div>
       <div class="sv-grid">
         <aside class="sv-side" aria-label="설문 진행 상황">
           <svg class="bloom" viewBox="-50 -50 100 100" aria-hidden="true"></svg>
@@ -471,7 +491,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
       <details><summary>누가 참여할 수 있나요?</summary><p>전 국민 누구나 참여할 수 있습니다. 회원가입 없이 간편하게 참여하실 수 있습니다.</p></details>
       <details><summary>제주4·3을 잘 몰라도 참여할 수 있나요?</summary><p>네. 설문에 앞서 소개하는 ‘제주4·3 알아보기’ 세 가지 내용을 살펴보시면 쉽게 참여하실 수 있습니다.</p></details>
       <details><summary>설문에 참여하는 데 얼마나 걸리나요?</summary><p>약 3~5분 정도 소요됩니다. 간단한 문항으로 구성되어 있어 부담 없이 참여하실 수 있습니다.</p></details>
-      <details><summary>문항마다 정해진 답만 선택해야 하나요?</summary><p>객관식 문항은 원하는 답변을 선택하고, 의견을 작성하는 문항에는 자유롭게 생각을 적어주시면 됩니다.</p></details>
+      <details><summary>문항마다 정해진 답만 선택해야 하나요?</summary><p>객관식 문항은 해당하는 항목을 모두 선택하고(중복 선택 가능), 의견을 작성하는 문항에는 자유롭게 생각을 적어주시면 됩니다.</p></details>
       <details><summary>제 의견은 어떻게 활용되나요?</summary><p>모아주신 의견은 제80주년 기념사업 추진위원회와 공유하고, 기념사업의 추진 방향을 마련하는 데 활용합니다.</p></details>
       <details><summary>개인정보를 수집하나요?</summary><p>설문 참여를 위한 개인정보는 수집하지 않습니다.</p></details>
     </div>
@@ -492,7 +512,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
     <span class="ci"><img src="img/jeju_ci.png" width="600" height="78" alt="제주특별자치도"></span>
     <div>
       <p>주관 ｜ 제주특별자치도(4·3지원과)</p>
-      <p>국민과 함께 시작하는 2028년 제주4·3 80주년 국민 의견수렴 · 2026. 11. 20. ~ 12. 21.</p>
+      <p>국민과 함께 시작하는 2028년 제주4·3 제80주년 국민 의견수렴 · 2026. 11. 20. ~ 12. 21.</p>
     </div>
   </div>
 </footer>
@@ -505,13 +525,13 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
   const CONFIG={endpoint:'', open:[2026,10,20], close:[2026,11,21], day80:[2028,3,3]};
 
   const Q=[
-    {c:'80주년의 의미', q:'제주4·3 제80주년은 어떤 의미가 되어야 한다고 생각하십니까?', o:[
+    {c:'제80주년의 의미', q:'제주4·3 제80주년은 어떤 의미가 되어야 한다고 생각하십니까?', o:[
       '제주4·3의 진실을 기억하고 정의로운 해결을 이어가는 계기',
       '희생자를 추모하고 유족의 아픔을 위로하는 계기',
       '과거의 비극이 되풀이되지 않도록 평화와 인권의 가치를 실천하는 계기',
       '서로 다른 세대와 생각을 가진 사람들이 제주4·3을 통해 소통하고 공감하는 계기',
       '제주4·3의 역사와 교훈을 다음 세대에 온전히 전하는 계기']},
-    {c:'국민이 바라는 80주년의 모습', q:'국민이 바라는 제주4·3 제80주년의 모습은 무엇입니까?', o:[
+    {c:'국민이 바라는 제80주년의 모습', q:'국민이 바라는 제주4·3 제80주년의 모습은 무엇입니까?', o:[
       '국민 누구나 제주4·3을 알고 함께 기억하는 해',
       '희생자와 유족의 아픔을 이해하고 위로를 함께하는 해',
       '전시·문화·예술 등 다양한 방식으로 제주4·3을 경험하고 공감하는 해',
@@ -531,7 +551,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
       '온라인으로 언제 어디서나 참여할 수 있는 캠페인·전시·콘텐츠',
       '청소년과 청년이 의견을 제안하고 기념사업에 참여할 수 있는 기회',
       '지역과 세대를 넘어 다양한 사람들이 함께 이야기하고 교류하는 장']},
-    {c:'80주년 이후 기대하는 변화', q:'제주4·3 제80주년 이후에도 우리 사회에 지속되어야 할 성과는 무엇이라고 생각하십니까?', o:[
+    {c:'제80주년 이후 기대하는 변화', q:'제주4·3 제80주년 이후에도 우리 사회에 지속되어야 할 성과는 무엇이라고 생각하십니까?', o:[
       '국민의 제주4·3에 대한 이해와 관심이 높아지는 것',
       '희생자와 유족의 명예회복 및 미해결 과제가 진전되는 것',
       '학교와 일상에서 제주4·3을 배우고 기억하는 기반이 마련되는 것',
@@ -540,8 +560,8 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
       '국제사회가 제주4·3의 역사와 교훈을 함께 기억하는 것',
       '100주년까지 이어갈 장기적인 계획과 지속사업이 마련되는 것']}
   ];
-  const FREE={c:'자유 의견 (선택)', q:'제주4·3 제80주년에 바라는 점이나 제안하고 싶은 사업이 있다면 자유롭게 작성해 주세요.',
-    ex:'예시) 제80주년에 꼭 이루어졌으면 하는 일, 새롭게 시도했으면 하는 기념사업, 국민 참여를 높이는 방법, 미래세대에 전하고 싶은 가치 등'};
+  const FREE={c:'자유 의견 (선택)', q:'제주4·3 제80주년을 뜻깊게 기념하기 위해 추진했으면 하는 사업을 자유롭게 제안해 주세요.',
+    ex:'제80주년을 맞아 새롭게 추진하거나 확대했으면 하는 기념사업 등'};
   const N=Q.length, MAXLEN=1000, KEY='jeju43-80-survey';
   const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
   const D=a=>new Date(a[0],a[1],a[2]);
@@ -571,10 +591,11 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
   });
 
   /* 상태 */
-  let ans=Array(N).fill(null), text='', phone='', step=0, sent=false;
-  try{const s=JSON.parse(localStorage.getItem(KEY)||'null'); if(s&&Array.isArray(s.ans)&&s.ans.length===N){ans=s.ans; text=s.text||''; step=Math.min(s.step||0,N);}}catch(e){}
+  const blank=()=>Array.from({length:N},()=>[]);
+  let ans=blank(), text='', phone='', step=0, sent=false;
+  try{const s=JSON.parse(localStorage.getItem(KEY)||'null'); if(s&&Array.isArray(s.ans)&&s.ans.length===N){ans=s.ans.map(a=>Array.isArray(a)?a.filter(Number.isInteger):Number.isInteger(a)?[a]:[]); text=s.text||''; step=Math.min(s.step||0,N);}}catch(e){}
   const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({ans,text,step}));}catch(e){}};
-  const firstOpen=()=>{const i=ans.findIndex(a=>a===null); return i<0?N:i;};
+  const firstOpen=()=>{const i=ans.findIndex(a=>!a.length); return i<0?N:i;};
   if(step>firstOpen()) step=firstOpen();
 
   const form=$('#sv'), stage=$('#stage'), err=$('#err'), prev=$('#prev'), next=$('#next'), toc=$('#toc');
@@ -587,15 +608,15 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
   });
 
   function paint(){
-    $$('.bloom .p').forEach(p=>p.classList.toggle('on',ans[+p.dataset.i]!==null));
+    $$('.bloom .p').forEach(p=>p.classList.toggle('on',ans[+p.dataset.i].length>0));
     $$('.bloom .c,.bloom .c2').forEach(c=>c.classList.toggle('on',sent));
     const reach=firstOpen();
     toc.querySelectorAll('button').forEach((b,i)=>{
-      b.dataset.done=String(i<N?ans[i]!==null:sent);
+      b.dataset.done=String(i<N?ans[i].length>0:sent);
       b.disabled=sent||i>reach;
       if(i===step&&!sent) b.setAttribute('aria-current','step'); else b.removeAttribute('aria-current');
     });
-    const answered=ans.filter(a=>a!==null).length;
+    const answered=ans.filter(a=>a.length).length;
     $('#bar').style.width=(sent?100:Math.round((answered+(step===N?.5:0))/(N+1)*100))+'%';
   }
 
@@ -605,12 +626,11 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
     $('#progTxt').innerHTML='문항 <b>'+(step+1)+'</b> / '+(N+1)+(last?' · 선택':'');
     let h='<fieldset><legend class="q" tabindex="-1" id="qLegend"><span class="q-cat">'+q.c+'</span>'+(last?'<label for="free">'+q.q+'</label>':q.q)+'</legend>';
     if(!last){
-      h+='<p class="q-hint">가장 중요한 하나를 골라 주세요.</p><div class="opts">';
-      q.o.forEach((o,i)=>{h+='<label class="opt"><input type="radio" name="q'+step+'" value="'+i+'"'+(ans[step]===i?' checked':'')+'><span class="dot" aria-hidden="true"></span><span class="t">'+o+'</span></label>';});
+      h+='<p class="q-hint">해당하는 항목을 모두 선택해 주세요. (중복 선택 가능)</p><div class="opts">';
+      q.o.forEach((o,i)=>{h+='<label class="opt"><input type="checkbox" name="q'+step+'" value="'+i+'"'+(ans[step].includes(i)?' checked':'')+'><span class="dot" aria-hidden="true"></span><span class="t">'+o+'</span></label>';});
       h+='</div>';
     }else{
-      h+='<p class="q-hint">적지 않고 바로 보내셔도 됩니다.</p>'+
-         '<textarea id="free" maxlength="'+MAXLEN+'" placeholder="'+q.ex+'" aria-describedby="freeCnt">'+esc(text)+'</textarea>'+
+      h+='<textarea id="free" maxlength="'+MAXLEN+'" placeholder="'+q.ex+'" aria-describedby="freeCnt">'+esc(text)+'</textarea>'+
          '<div class="count" id="freeCnt"><span id="len">'+text.length+'</span> / '+MAXLEN.toLocaleString('ko-KR')+'</div>';
     }
     h+='</fieldset>';
@@ -618,7 +638,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
     prev.hidden=step===0;
     next.textContent=last?'의견 보내기':'다음';
     if(!last){
-      stage.querySelectorAll('input[type=radio]').forEach(r=>r.onchange=()=>{ans[step]=+r.value; err.hidden=true; save(); paint();});
+      stage.querySelectorAll('input[type=checkbox]').forEach(r=>r.onchange=()=>{ans[step]=[...stage.querySelectorAll('input[type=checkbox]:checked')].map(c=>+c.value); err.hidden=true; save(); paint();});
     }else{
       const ta=$('#free');
       ta.oninput=()=>{text=ta.value; $('#len').textContent=text.length; save();};
@@ -633,11 +653,11 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
   form.addEventListener('submit',async e=>{
     e.preventDefault();
     if(step<N){
-      if(ans[step]===null) return fail('항목 하나를 선택해 주세요.',stage.querySelector('input'));
+      if(!ans[step].length) return fail('항목을 하나 이상 선택해 주세요.',stage.querySelector('input'));
       return go(step+1,true);
     }
     if(live&&state!=='open') return fail(state==='soon'?'의견 수렴은 2026년 11월 20일에 시작합니다.':'의견 수렴이 마감되었습니다.');
-    const payload={answers:ans.map((a,i)=>({q:i+1,choice:a+1,label:Q[i].o[a]})),opinion:text.trim(),at:new Date().toISOString()};
+    const payload={answers:ans.map((a,i)=>({q:i+1,choices:a.map(x=>x+1),labels:a.map(x=>Q[i].o[x])})),opinion:text.trim(),at:new Date().toISOString()};
     if(live){
       next.disabled=true; next.textContent='보내는 중';
       try{const r=await fetch(CONFIG.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); if(!r.ok) throw 0;}
@@ -649,14 +669,14 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
 
   function finish(){
     sent=true; try{localStorage.removeItem(KEY);}catch(e){}
-    $('#mine').innerHTML=Q.map((q,i)=>'<div><dt>'+q.c+'</dt><dd>'+q.o[ans[i]]+'</dd></div>').join('')+(text.trim()?'<div><dt>자유 의견</dt><dd>'+esc(text.trim()).replace(/\n/g,'<br>')+'</dd></div>':'');
+    $('#mine').innerHTML=Q.map((q,i)=>'<div><dt>'+q.c+'</dt><dd>'+ans[i].map(x=>q.o[x]).join('<br>')+'</dd></div>').join('')+(text.trim()?'<div><dt>자유 의견</dt><dd>'+esc(text.trim()).replace(/\n/g,'<br>')+'</dd></div>':'');
     form.hidden=true; $('#done').hidden=false; paint();
     $('#done').focus({preventScroll:true}); scrollTo({top:scrollY+$('.sv-card').getBoundingClientRect().top-84});
   }
-  $('#again').onclick=()=>{ans=Array(N).fill(null); text=''; phone=''; step=0; sent=false; form.hidden=false; $('#done').hidden=true; $('#shareMsg').textContent=''; render(true);};
+  $('#again').onclick=()=>{ans=blank(); text=''; phone=''; step=0; sent=false; form.hidden=false; $('#done').hidden=true; $('#shareMsg').textContent=''; render(true);};
 
   $('#share').onclick=async()=>{
-    const data={title:'국민과 함께 시작하는 2028년 제주4·3 80주년',text:'2028년 제주4·3 80주년, 여러분의 생각이 80주년의 방향이 됩니다.',url:location.href.split('#')[0]};
+    const data={title:'국민과 함께 시작하는 2028년 제주4·3 제80주년',text:'2028년 제주4·3 제80주년, 여러분의 생각이 제80주년의 방향이 됩니다.',url:location.href.split('#')[0]};
     try{ if(navigator.share){await navigator.share(data); return;} await navigator.clipboard.writeText(data.url); $('#shareMsg').textContent='주소를 복사했습니다. 카카오톡이나 문자에 붙여 넣어 주세요.'; }
     catch(e){ if(e&&e.name==='AbortError') return; $('#shareMsg').textContent='주소창의 주소를 복사해 알려 주세요.'; }
   };
