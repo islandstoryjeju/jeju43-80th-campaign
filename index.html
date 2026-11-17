@@ -165,6 +165,8 @@ a{color:inherit}
 .rail li::after{content:"";position:absolute;left:0;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--surface);border:1.5px solid var(--thread)}
 .rail li.now::after{background:var(--red);border-color:var(--red);box-shadow:0 0 0 4px var(--red-tint)}
 .rail time{font-family:var(--f-display);font-weight:800;font-variant-numeric:tabular-nums;color:var(--navy)}
+.rail .say{grid-column:2;justify-self:start;position:relative;width:fit-content;margin:8px 0 6px;padding:9px 14px;border-radius:16px;background:var(--red-tint);border:1.5px solid var(--thread);color:var(--red-deep);font-weight:700;font-size:.9rem;line-height:1.4;text-align:center}
+.rail .say::after{content:"";position:absolute;left:34px;bottom:-7px;width:11px;height:11px;background:var(--red-tint);border-right:1.5px solid var(--thread);border-bottom:1.5px solid var(--thread);transform:rotate(45deg)}
 .rail .tp.duo{border:0;border-radius:0;width:min(100%,150px)}
 .rail .tp{grid-column:2;width:min(100%,220px);height:auto;border-radius:8px;border:1px solid var(--line);margin-top:2px}
 .rail span{color:var(--muted);font-size:.93rem}
@@ -411,7 +413,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
           <li><time datetime="2014">2014</time><span>국가기념일 지정</span></li>
           <li><time datetime="2018">2018</time><span>제70주년 제주4·3희생자 추념식 봉행</span></li>
           <li><time datetime="2025">2025</time><span>세계기록유산 등재</span><img class="tp" src="img/tl_2025.webp" width="324" height="308" alt="유네스코 세계기록유산 등재를 기념하는 사람들" loading="lazy" decoding="async"></li>
-          <li class="now"><time datetime="2028-04-03">2028. 4. 3.</time><span>제주4·3 제80주년</span><img class="tp duo" src="img/duo_logo.webp" width="900" height="1116" alt="하영이와 동백이" loading="lazy" decoding="async"></li>
+          <li class="now"><time datetime="2028-04-03">2028. 4. 3.</time><span>제주4·3 제80주년</span><p class="say">국민 여러분과 함께<br>만들어봐요</p><img class="tp duo" src="img/duo_logo.webp" width="900" height="1116" alt="하영이와 동백이" loading="lazy" decoding="async"></li>
         </ol>
       </div>
     </div>
