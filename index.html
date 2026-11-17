@@ -132,7 +132,7 @@ a{color:inherit}
 .swipe::-webkit-scrollbar{display:none}
 .swipe li{scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 20px 6px;display:flex;flex-direction:column}
 .swipe .ph{margin:-20px -20px 16px;border-radius:17px 17px 0 0;overflow:hidden;background:#EDEAE2}
-.swipe .ph img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 35%}
+.swipe .ph img{width:100%;aspect-ratio:4/3;object-fit:contain}
 .swipe .ph.doc img{object-fit:contain;background:#fff}
 .swipe .ph figcaption{font-size:.78rem;color:var(--muted);padding:7px 20px 8px;background:var(--surface);border-bottom:1px solid var(--line)}
 .swipe .n{font-family:var(--f-display);font-weight:800;font-size:2.2rem;line-height:1;color:var(--red)}
@@ -165,7 +165,7 @@ a{color:inherit}
 .rail li::after{content:"";position:absolute;left:0;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--surface);border:1.5px solid var(--thread)}
 .rail li.now::after{background:var(--red);border-color:var(--red);box-shadow:0 0 0 4px var(--red-tint)}
 .rail time{font-family:var(--f-display);font-weight:800;font-variant-numeric:tabular-nums;color:var(--navy)}
-.rail .tp{grid-column:2;width:min(100%,220px);aspect-ratio:3/2;object-fit:cover;border-radius:8px;border:1px solid var(--line);margin-top:2px}
+.rail .tp{grid-column:2;width:min(100%,220px);height:auto;border-radius:8px;border:1px solid var(--line);margin-top:2px}
 .rail span{color:var(--muted);font-size:.93rem}
 .rail li.now time,.rail li.now span{color:var(--red);font-weight:700}
 @media (min-width:980px){
@@ -380,7 +380,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
         <li><figure class="ph"><img src="img/photo_history.webp" width="1200" height="894" alt="숲속 풀밭에 모여 앉아 있는 제주 주민들과 아이들의 흑백 사진" loading="lazy" decoding="async"><figcaption>산으로 간 주민들_피신한 아이들(1948년)</figcaption></figure><span class="n" aria-hidden="true">1</span><h3>제주4·3이란?</h3>
           <p class="key">1947년부터 1954년까지, 제주에서 수많은 주민이 희생된 역사적 사건</p>
           <details><summary>자세히</summary><p>제주4·3은 1947년 3월 1일을 기점으로 1948년 4월 3일 발생한 소요사태 및 1954년 9월 21일까지 제주도에서 발생한 무력충돌과 그 진압과정에서 주민들이 희생당한 사건입니다.</p><p><a href="https://jeju43peace.or.kr/kor/sub01_01_01.do" target="_blank" rel="noopener">제주4·3평화재단 제주4·3 소개 ↗</a></p></details></li>
-        <li><figure class="ph"><img src="img/photo_truth_1998.webp" width="1200" height="708" style="object-position:center 88%" alt="‘50년을 넘길 수 없다! 4·3 진실 규명하라!’ 현수막을 들고 행진하는 사람들" loading="lazy" decoding="async"><figcaption>제주4·3 제50주년 특별법 제정 운동 (1998)</figcaption></figure><span class="n" aria-hidden="true">2</span><h3>진상규명과 명예회복</h3>
+        <li><figure class="ph"><img src="img/photo_truth_1998.webp" width="1200" height="708" alt="‘50년을 넘길 수 없다! 4·3 진실 규명하라!’ 현수막을 들고 행진하는 사람들" loading="lazy" decoding="async"><figcaption>제주4·3 제50주년 특별법 제정 운동 (1998)</figcaption></figure><span class="n" aria-hidden="true">2</span><h3>진상규명과 명예회복</h3>
           <p class="key">제주4·3특별법 제정에서 정부의 진상조사와 공식 사과, 희생자·유족의 명예회복과 제주4·3기록물의 유네스코 세계기록유산 등재까지</p>
           <details><summary>자세히</summary><p>2000년 제주4·3특별법 제정을 시작으로 진상규명과 명예회복을 위한 본격적인 노력이 시작되었습니다. 2003년에는 정부의 「제주4·3사건 진상조사보고서」가 확정되고 대통령의 공식 사과가 이루어졌습니다.</p><p>이후 희생자 추념일의 국가기념일 지정, 희생자 보상, 유해 발굴과 신원 확인 등 희생자의 명예회복과 실질적 피해 회복을 위한 노력이 이어지고 있습니다. 특히 2025년에는 제주4·3 기록물 14,673건이 유네스코 세계기록유산에 등재되어 제주4·3의 역사적 진실과 기억을 세계와 공유하고, 평화와 인권의 가치를 국제사회에 알리는 계기를 마련했습니다.</p></details></li>
         <li><figure class="ph doc"><img src="img/photo_unesco.webp" width="1127" height="798" alt="제주4·3기록물의 유네스코 세계기록유산 등재인증서" loading="lazy" decoding="async"><figcaption>유네스코 세계기록유산 등재인증서 (2025. 4. 17.)</figcaption></figure><span class="n" aria-hidden="true">3</span><h3>평화와 인권의 미래</h3>
