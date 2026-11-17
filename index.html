@@ -165,6 +165,7 @@ a{color:inherit}
 .rail li::after{content:"";position:absolute;left:0;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--surface);border:1.5px solid var(--thread)}
 .rail li.now::after{background:var(--red);border-color:var(--red);box-shadow:0 0 0 4px var(--red-tint)}
 .rail time{font-family:var(--f-display);font-weight:800;font-variant-numeric:tabular-nums;color:var(--navy)}
+.rail .tp{grid-column:2;width:min(100%,220px);aspect-ratio:3/2;object-fit:cover;border-radius:8px;border:1px solid var(--line);margin-top:2px}
 .rail span{color:var(--muted);font-size:.93rem}
 .rail li.now time,.rail li.now span{color:var(--red);font-weight:700}
 @media (min-width:980px){
@@ -179,6 +180,7 @@ a{color:inherit}
   .rail li::after{top:0;margin-top:0}
   .rail time{display:block;font-size:1rem}
   .rail span{display:block;font-size:.84rem;line-height:1.4}
+  .rail .tp{display:block;width:100%;max-width:190px;margin-top:8px}
 }
 
 /* survey */
@@ -390,23 +392,23 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
         <i aria-hidden="true"></i>
         <h3>제주4·3의 역사와 기억</h3>
         <ol class="rail rail-a" aria-label="제주4·3 연표: 1947년부터 1954년까지">
-          <li><time datetime="1947-03-01">1947. 3. 1.</time><span>4·3의 도화선, 3·1절 발포사건</span></li>
+          <li><time datetime="1947-03-01">1947. 3. 1.</time><span>4·3의 도화선, 3·1절 발포사건</span><img class="tp" src="img/tl_1947.webp" width="529" height="254" alt="3·1절 기념대회 발포 장면을 그린 그림" loading="lazy" decoding="async"></li>
           <li><time datetime="1948-04-03">1948. 4. 3.</time><span>무장봉기 시작</span></li>
           <li><time datetime="1948-10-17">1948. 10. 17.</time><span>중산간마을 초토화작전 전개</span></li>
           <li><time datetime="1950-07">1950. 7월</time><span>한국전쟁 발발 이후 예비검속으로 인한 집단학살</span></li>
-          <li><time datetime="1954-09-21">1954. 9. 21.</time><span>한라산 금족령 해제<br>7년7개월 만에 4·3 공식적으로 종식</span></li>
+          <li><time datetime="1954-09-21">1954. 9. 21.</time><span>한라산 금족령 해제<br>7년7개월 만에 4·3 공식적으로 종식</span><img class="tp" src="img/tl_1954.webp" width="344" height="247" alt="한라산에 세워진 비석" loading="lazy" decoding="async"></li>
         </ol>
         <ol class="rail rail-b" aria-label="제주4·3 연표: 1989년부터 2028년까지">
           <li><time datetime="1989">1989</time><span>제1회 4·3추모제 봉행</span></li>
           <li><time datetime="1994">1994</time><span>유족회·사월제공준위 공동 주최<br>첫 합동위령제 봉행</span></li>
-          <li><time datetime="1998">1998</time><span>제주4·3 제50주년 전후<br>4·3특별법 제정 운동</span></li>
-          <li><time datetime="2000">2000</time><span>제주4·3특별법 제정</span></li>
-          <li><time datetime="2003">2003</time><span>정부의 진상보고서 확정<br>대통령 공식 사과</span></li>
+          <li><time datetime="1998">1998</time><span>제주4·3 제50주년 전후<br>4·3특별법 제정 운동</span><img class="tp" src="img/tl_1998.webp" width="640" height="317" alt="제주4·3 진실 규명을 요구하는 1998년 행진" loading="lazy" decoding="async"></li>
+          <li><time datetime="2000">2000</time><span>제주4·3특별법 제정</span><img class="tp" src="img/tl_2000.webp" width="322" height="284" alt="제주4·3특별법 서명식" loading="lazy" decoding="async"></li>
+          <li><time datetime="2003">2003</time><span>정부의 진상보고서 확정<br>대통령 공식 사과</span><img class="tp" src="img/tl_2003.webp" width="324" height="306" alt="단상 앞에서 고개 숙여 사과하는 모습" loading="lazy" decoding="async"></li>
           <li><time datetime="2005">2005</time><span>제주 세계평화의 섬 지정</span></li>
-          <li><time datetime="2013">2013</time><span>4·3유족회와 재향경우회 화해·상생 선언</span></li>
+          <li><time datetime="2013">2013</time><span>4·3유족회와 재향경우회 화해·상생 선언</span><img class="tp" src="img/tl_2013.webp" width="324" height="306" alt="화해·상생 선언 뒤 손을 맞잡고 만세를 하는 사람들" loading="lazy" decoding="async"></li>
           <li><time datetime="2014">2014</time><span>국가기념일 지정</span></li>
-          <li><time datetime="2018">2018</time><span>제70주년 제주4·3희생자 추념식 봉행</span></li>
-          <li><time datetime="2025">2025</time><span>세계기록유산 등재</span></li>
+          <li><time datetime="2018">2018</time><span>제70주년 제주4·3희생자 추념식 봉행</span><img class="tp" src="img/tl_2018.webp" width="324" height="310" alt="제70주년 제주4·3희생자 추념식" loading="lazy" decoding="async"></li>
+          <li><time datetime="2025">2025</time><span>세계기록유산 등재</span><img class="tp" src="img/tl_2025.webp" width="324" height="308" alt="유네스코 세계기록유산 등재를 기념하는 사람들" loading="lazy" decoding="async"></li>
           <li class="now"><time datetime="2028-04-03">2028. 4. 3.</time><span>제주4·3 제80주년</span></li>
         </ol>
       </div>
