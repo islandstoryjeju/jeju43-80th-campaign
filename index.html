@@ -497,7 +497,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
       <details><summary>누가 참여할 수 있나요?</summary><p>전 국민 누구나 참여할 수 있습니다. 회원가입 없이 간편하게 참여하실 수 있습니다.</p></details>
       <details><summary>제주4·3을 잘 몰라도 참여할 수 있나요?</summary><p>네. 설문에 앞서 소개하는 ‘제주4·3 알아보기’ 세 가지 내용을 살펴보시면 쉽게 참여하실 수 있습니다.</p></details>
       <details><summary>설문에 참여하는 데 얼마나 걸리나요?</summary><p>약 3~5분 정도 소요됩니다. 간단한 문항으로 구성되어 있어 부담 없이 참여하실 수 있습니다.</p></details>
-      <details><summary>문항마다 정해진 답만 선택해야 하나요?</summary><p>객관식 문항은 해당하는 항목을 모두 선택하고(중복 선택 가능), 의견을 작성하는 문항에는 자유롭게 생각을 적어주시면 됩니다.</p></details>
+      <details><summary>문항마다 정해진 답만 선택해야 하나요?</summary><p>객관식 문항은 해당하는 항목을 최대 3개까지 선택하고, 의견을 작성하는 문항에는 자유롭게 생각을 적어주시면 됩니다.</p></details>
       <details><summary>제 의견은 어떻게 활용되나요?</summary><p>모아주신 의견은 제80주년 기념사업 추진위원회와 공유하고, 기념사업의 추진 방향을 마련하는 데 활용합니다.</p></details>
       <details><summary>개인정보를 수집하나요?</summary><p>설문 참여를 위한 개인정보는 수집하지 않습니다.</p></details>
     </div>
@@ -599,7 +599,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
   /* 상태 */
   const blank=()=>Array.from({length:N},()=>[]);
   let ans=blank(), text='', phone='', step=0, sent=false;
-  try{const s=JSON.parse(localStorage.getItem(KEY)||'null'); if(s&&Array.isArray(s.ans)&&s.ans.length===N){ans=s.ans.map(a=>Array.isArray(a)?a.filter(Number.isInteger):Number.isInteger(a)?[a]:[]); text=s.text||''; step=Math.min(s.step||0,N);}}catch(e){}
+  try{const s=JSON.parse(localStorage.getItem(KEY)||'null'); if(s&&Array.isArray(s.ans)&&s.ans.length===N){ans=s.ans.map(a=>Array.isArray(a)?a.filter(Number.isInteger).slice(0,3):Number.isInteger(a)?[a]:[]); text=s.text||''; step=Math.min(s.step||0,N);}}catch(e){}
   const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({ans,text,step}));}catch(e){}};
   const firstOpen=()=>{const i=ans.findIndex(a=>!a.length); return i<0?N:i;};
   if(step>firstOpen()) step=firstOpen();
@@ -632,7 +632,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
     $('#progTxt').innerHTML='문항 <b>'+(step+1)+'</b> / '+(N+1)+(last?' · 선택':'');
     let h='<fieldset><legend class="q" tabindex="-1" id="qLegend"><span class="q-cat">'+q.c+'</span>'+(last?'<label for="free">'+q.q+'</label>':q.q)+'</legend>';
     if(!last){
-      h+='<p class="q-hint">해당하는 항목을 모두 선택해 주세요. (중복 선택 가능)</p><div class="opts">';
+      h+='<p class="q-hint">해당하는 항목을 선택해 주세요. (최대 3개 항목까지 선택 가능)</p><div class="opts">';
       q.o.forEach((o,i)=>{h+='<label class="opt"><input type="checkbox" name="q'+step+'" value="'+i+'"'+(ans[step].includes(i)?' checked':'')+'><span class="dot" aria-hidden="true"></span><span class="t">'+o+'</span></label>';});
       h+='</div>';
     }else{
@@ -644,7 +644,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
     prev.hidden=step===0;
     next.textContent=last?'의견 보내기':'다음';
     if(!last){
-      stage.querySelectorAll('input[type=checkbox]').forEach(r=>r.onchange=()=>{ans[step]=[...stage.querySelectorAll('input[type=checkbox]:checked')].map(c=>+c.value); err.hidden=true; save(); paint();});
+      stage.querySelectorAll('input[type=checkbox]').forEach(r=>r.onchange=()=>{let ck=[...stage.querySelectorAll('input[type=checkbox]:checked')]; if(ck.length>3){r.checked=false; err.textContent='최대 3개 항목까지 선택할 수 있습니다.'; err.hidden=false; return;} ans[step]=ck.map(c=>+c.value); err.hidden=true; save(); paint();});
     }else{
       const ta=$('#free');
       ta.oninput=()=>{text=ta.value; $('#len').textContent=text.length; save();};
