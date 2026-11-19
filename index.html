@@ -549,7 +549,7 @@ if(!ok&&Date.now()<OPEN){document.documentElement.className+=' gated';var t=setI
 <script>
 (function(){
   /* 운영 설정: endpoint에 응답 저장 주소를 넣으면 실제 수집으로 바뀌고 시연 안내가 사라집니다. */
-  const CONFIG={endpoint:'', open:[2026,10,20], close:[2026,11,21], day80:[2028,3,3]};
+  const CONFIG={endpoint:'https://mmzxvtlhahqaurhsesfe.supabase.co/rest/v1/responses', key:'sb_publishable_5AJCeUsCHmYZK4daJimbMA_cRQpBVui', open:[2026,10,20], close:[2026,11,21], day80:[2028,3,3]};
 
   const Q=[
     {c:'제80주년의 의미', q:'제주4·3 제80주년은 어떤 의미가 되어야 한다고 생각하십니까?', o:[
@@ -684,10 +684,10 @@ if(!ok&&Date.now()<OPEN){document.documentElement.className+=' gated';var t=setI
       return go(step+1,true);
     }
     if(live&&state!=='open') return fail(state==='soon'?'의견 수렴은 2026년 11월 20일에 시작합니다.':'의견 수렴이 마감되었습니다.');
-    const payload={answers:ans.map((a,i)=>({q:i+1,choices:a.map(x=>x+1),labels:a.map(x=>Q[i].o[x])})),opinion:text.trim(),at:new Date().toISOString()};
+    const payload={opinion:text.trim()}; ans.forEach((a,i)=>{payload['q'+(i+1)]=a.map(x=>x+1);});
     if(live){
       next.disabled=true; next.textContent='보내는 중';
-      try{const r=await fetch(CONFIG.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}); if(!r.ok) throw 0;}
+      try{const r=await fetch(CONFIG.endpoint,{method:'POST',headers:{'Content-Type':'application/json','apikey':CONFIG.key,'Prefer':'return=minimal'},body:JSON.stringify(payload)}); if(!r.ok) throw 0;}
       catch(x){next.disabled=false; next.textContent='의견 보내기'; return fail('보내지 못했습니다. 잠시 뒤 다시 눌러 주세요.',next);}
       next.disabled=false;
     }
