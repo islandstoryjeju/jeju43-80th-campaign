@@ -641,7 +641,7 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
       q.o.forEach((o,i)=>{h+='<label class="opt"><input type="checkbox" name="q'+step+'" value="'+i+'"'+(ans[step].includes(i)?' checked':'')+'><span class="dot" aria-hidden="true"></span><span class="t">'+o+'</span></label>';});
       h+='</div>';
     }else{
-      h+='<textarea id="free" maxlength="'+MAXLEN+'" placeholder="'+q.ex+'" aria-describedby="freeCnt">'+esc(text)+'</textarea>'+
+      h+='<p class="q-hint" id="freeNote">이름·연락처 등 개인정보는 적지 말아 주세요.</p><textarea id="free" maxlength="'+MAXLEN+'" placeholder="'+q.ex+'" aria-describedby="freeNote freeCnt">'+esc(text)+'</textarea>'+
          '<div class="count" id="freeCnt"><span id="len">'+text.length+'</span> / '+MAXLEN.toLocaleString('ko-KR')+'</div>';
     }
     h+='</fieldset>';
