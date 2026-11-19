@@ -1,0 +1,52 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>참여 현황 · 2028년 제주4·3 제80주년 국민 의견수렴</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Pretendard,-apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;background:#FCF8F2;color:#1E2420;line-height:1.5;word-break:keep-all}
+.wrap{width:min(100% - 32px,1040px);margin:0 auto;padding:28px 0 60px}
+h1{font-size:1.35rem;margin:0 0 4px;color:#213F22}h2{font-size:1.05rem;margin:34px 0 12px;color:#213F22}
+.sub{color:#5b625c;font-size:.9rem;margin:0}
+form{display:flex;gap:8px;margin:28px 0;flex-wrap:wrap}input{flex:1;min-width:200px;font-size:16px;padding:12px 14px;border:1.5px solid #cdbfd6;border-radius:10px;background:#fff}
+button{font-size:16px;font-weight:700;padding:12px 20px;border:0;border-radius:10px;background:#642C78;color:#fff;cursor:pointer}
+.msg{color:#a3262b;font-weight:600;min-height:1.5em}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px}
+.kpi div{background:#fff;border:1px solid #e6dcea;border-radius:14px;padding:16px}.kpi b{display:block;font-size:1.7rem;color:#642C78;font-variant-numeric:tabular-nums}.kpi span{font-size:.85rem;color:#5b625c}
+.tw{overflow-x:auto;background:#fff;border:1px solid #e6dcea;border-radius:14px}table{border-collapse:collapse;width:100%;font-size:.92rem;font-variant-numeric:tabular-nums}
+th,td{padding:10px 12px;text-align:right;border-bottom:1px solid #f0e9f3;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{background:#f6eff8;color:#3b2a45;font-weight:700}tr.sum td{font-weight:700;background:#faf6fb}
+.q{background:#fff;border:1px solid #e6dcea;border-radius:14px;padding:16px;margin-bottom:12px}.q h3{margin:0 0 10px;font-size:.98rem}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;margin:9px 0;font-size:.9rem}.bar{grid-column:1/-1;height:10px;background:#f0e9f3;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;background:#8b5aa0;border-radius:99px}
+.n{font-weight:700;font-variant-numeric:tabular-nums;color:#3b2a45}.note{font-size:.84rem;color:#5b625c;margin-top:26px}
+[hidden]{display:none!important}
+</style></head><body><div class="wrap">
+<h1>참여 현황</h1><p class="sub">2028년 제주4·3 제80주년 국민 의견수렴 · 관리자용</p>
+<form id="f"><input id="pin" type="password" autocomplete="current-password" placeholder="관리자 비밀번호" aria-label="관리자 비밀번호" required><button>확인</button></form>
+<p class="msg" id="msg" role="alert"></p>
+<div id="out" hidden>
+<p class="sub" id="at"></p>
+<div class="kpi" id="kpi"></div>
+<h2>날짜별 현황</h2><div class="tw"><table id="daily"></table></div>
+<h2>유입 경로별 방문</h2><div class="tw"><table id="src"></table></div>
+<h2>문항별 선택 수</h2><div id="tally"></div>
+<p class="note">방문수는 홈페이지가 열린 횟수, 방문 기기수는 하루에 처음 들어온 기기 수입니다(같은 사람이 다른 기기로 들어오면 따로 셉니다). 참여 건수는 제출 횟수이며 한 사람이 여러 번 제출하면 여러 건으로 잡힙니다. 자유 의견 원문은 이 화면에 나오지 않습니다.</p>
+</div></div>
+<script>
+const Q=[{"c":"제80주년의 의미","o":["제주4·3의 진실을 기억하고 정의로운 해결을 이어가는 계기","희생자를 추모하고 유족의 아픔을 위로하는 계기","과거의 비극이 되풀이되지 않도록 평화와 인권의 가치를 실천하는 계기","서로 다른 세대와 생각을 가진 사람들이 제주4·3을 통해 소통하고 공감하는 계기","제주4·3의 역사와 교훈을 다음 세대에 온전히 전하는 계기"]},{"c":"국민이 바라는 제80주년의 모습","o":["국민 누구나 제주4·3을 알고 함께 기억하는 해","희생자와 유족의 아픔을 이해하고 위로를 함께하는 해","전시·문화·예술 등 다양한 방식으로 제주4·3을 경험하고 공감하는 해","세대와 지역을 넘어 다양한 국민이 함께 참여하는 해","제주를 넘어 국내외에 제주4·3의 역사와 가치를 널리 알리는 해"]},{"c":"기념사업 추진 방향","o":["제주4·3의 역사와 진실을 알리는 기록·전시 및 홍보 사업","희생자 추모와 유족 위로, 명예회복을 위한 사업","학교와 일상에서 활용할 수 있는 청소년·미래세대 역사교육 사업","영화·공연·문학·미술 등 문화예술을 통해 제주4·3을 새롭게 만나는 사업","도민과 국민이 직접 기획하고 참여하는 시민참여 사업","국내외 기관·단체와 협력하여 제주4·3의 가치를 세계와 나누는 사업"]},{"c":"국민참여 활성화","o":["누구나 쉽게 이해할 수 있는 제주4·3 정보와 홍보","전시·공연·체험 등 직접 참여하고 공감할 수 있는 다양한 프로그램","학교·도서관·문화시설 등 일상에서 제주4·3을 접할 수 있는 기회","온라인으로 언제 어디서나 참여할 수 있는 캠페인·전시·콘텐츠","청소년과 청년이 의견을 제안하고 기념사업에 참여할 수 있는 기회","지역과 세대를 넘어 다양한 사람들이 함께 이야기하고 교류하는 장"]},{"c":"제80주년 이후 기대하는 변화","o":["국민의 제주4·3에 대한 이해와 관심이 높아지는 것","희생자와 유족의 명예회복 및 미해결 과제가 진전되는 것","학교와 일상에서 제주4·3을 배우고 기억하는 기반이 마련되는 것","평화와 인권의 가치가 사회 전반에 확산되는 것","제주4·3을 매개로 세대와 지역 간 공감과 소통이 확대되는 것","국제사회가 제주4·3의 역사와 교훈을 함께 기억하는 것","100주년까지 이어갈 장기적인 계획과 지속사업이 마련되는 것"]}];const API='https://mmzxvtlhahqaurhsesfe.supabase.co/rest/v1/rpc/stats',KEY='sb_publishable_5AJCeUsCHmYZK4daJimbMA_cRQpBVui';
+const $=s=>document.querySelector(s),nf=n=>Number(n||0).toLocaleString('ko-KR'),esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const SRC={direct:'직접·기타',naver:'네이버 광고',kakao:'카카오톡 광고',youtube:'유튜브 광고',qr:'QR'};
+async function load(pin){$('#msg').textContent='불러오는 중…';
+ try{const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json','apikey':KEY},body:JSON.stringify({pin})});
+  if(!r.ok){$('#msg').textContent=r.status===404?'현황 기능이 아직 설정되지 않았습니다.':'불러오지 못했습니다. 잠시 후 다시 시도해 주세요.';return}
+  const d=await r.json();if(!d){$('#msg').textContent='비밀번호가 맞지 않습니다.';return}
+  $('#msg').textContent='';try{sessionStorage.setItem('ap',pin)}catch(e){}render(d)}catch(e){$('#msg').textContent='연결하지 못했습니다. 인터넷 연결을 확인해 주세요.'}}
+function render(d){const V=d.visits||[],R=d.responses||[],S=d.sources||[],T=d.tally||[];
+ const tv=V.reduce((a,x)=>a+x.views,0),tu=V.reduce((a,x)=>a+x.visitors,0),tr=R.reduce((a,x)=>a+x.n,0),to=R.reduce((a,x)=>a+x.opinions,0);
+ $('#at').textContent='기준 시각 '+new Date().toLocaleString('ko-KR',{timeZone:'Asia/Seoul'});
+ $('#kpi').innerHTML=[['누적 방문수',nf(tv)],['누적 방문 기기수',nf(tu)],['누적 참여 건수',nf(tr)],['자유 의견 작성',nf(to)],['참여율(참여÷방문 기기)',tu?(tr/tu*100).toFixed(1)+'%':'-']].map(x=>`<div><b>${x[1]}</b><span>${x[0]}</span></div>`).join('');
+ const days=[...new Set([...V.map(x=>x.day),...R.map(x=>x.day)])].sort().reverse(),vm=Object.fromEntries(V.map(x=>[x.day,x])),rm=Object.fromEntries(R.map(x=>[x.day,x]));
+ $('#daily').innerHTML='<tr><th>날짜</th><th>방문수</th><th>방문 기기수</th><th>참여 건수</th><th>자유 의견</th></tr>'+(days.length?`<tr class="sum"><td>합계</td><td>${nf(tv)}</td><td>${nf(tu)}</td><td>${nf(tr)}</td><td>${nf(to)}</td></tr>`:'<tr><td colspan="5">아직 기록이 없습니다.</td></tr>')+days.map(k=>`<tr><td>${esc(k)}</td><td>${nf(vm[k]&&vm[k].views)}</td><td>${nf(vm[k]&&vm[k].visitors)}</td><td>${nf(rm[k]&&rm[k].n)}</td><td>${nf(rm[k]&&rm[k].opinions)}</td></tr>`).join('');
+ $('#src').innerHTML='<tr><th>경로</th><th>방문수</th><th>방문 기기수</th></tr>'+(S.length?S.map(x=>`<tr><td>${esc(SRC[x.source]||x.source)}</td><td>${nf(x.views)}</td><td>${nf(x.visitors)}</td></tr>`).join(''):'<tr><td colspan="3">아직 기록이 없습니다.</td></tr>');
+ $('#tally').innerHTML=Q.map((q,i)=>{const m=Object.fromEntries(T.filter(x=>x.q===i+1).map(x=>[x.c,x.n])),mx=Math.max(1,...Object.values(m));
+  return `<div class="q"><h3>문항 ${i+1}. ${esc(q.c)}</h3>`+q.o.map((o,j)=>({o,j,n:m[j+1]||0})).sort((a,b)=>b.n-a.n).map(x=>`<div class="row"><span>${x.j+1}. ${esc(x.o)}</span><span class="n">${nf(x.n)}${tr?' ('+(x.n/tr*100).toFixed(1)+'%)':''}</span><div class="bar"><i style="width:${x.n/mx*100}%"></i></div></div>`).join('')+'</div>'}).join('');
+ $('#f').hidden=true;$('#out').hidden=false}
+$('#f').addEventListener('submit',e=>{e.preventDefault();load($('#pin').value)});
+try{const p=sessionStorage.getItem('ap');if(p)load(p)}catch(e){}
+</script></body></html>

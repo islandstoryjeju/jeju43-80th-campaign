@@ -325,6 +325,11 @@ html.gated #gate{display:flex;min-height:100vh;min-height:100svh;flex-direction:
 <script>
 (function(){var OPEN=Date.parse('2026-11-20T09:00:00+09:00');var ok=false;try{if(/[?&]preview=islandstory(&|$)/.test(location.search))sessionStorage.setItem('pv','1');ok=sessionStorage.getItem('pv')==='1';}catch(e){}
 if(!ok&&Date.now()<OPEN){document.documentElement.className+=' gated';var t=setInterval(function(){if(Date.now()>=OPEN){clearInterval(t);location.reload();}},15000);}})();
+/* 방문 집계: 날짜·유입경로별 횟수만 기록 (접속 주소·기기 정보 저장 안 함) */
+(function(){try{if(/(^| )gated( |$)/.test(document.documentElement.className))return;var pv=false;try{pv=sessionStorage.getItem('pv')==='1';}catch(e){}if(pv)return;
+var m=/[?&](?:utm_source|s)=([a-z]+)/i.exec(location.search),src=m?m[1].toLowerCase():'direct',d=new Date(Date.now()+9*36e5).toISOString().slice(0,10),first=false;
+try{if(localStorage.getItem('vd')!==d){first=true;localStorage.setItem('vd',d);}}catch(e){}
+fetch('https://mmzxvtlhahqaurhsesfe.supabase.co/rest/v1/rpc/hit',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json','apikey':'sb_publishable_5AJCeUsCHmYZK4daJimbMA_cRQpBVui'},body:JSON.stringify({src:src,first:first})}).catch(function(){});}catch(e){}})();
 </script>
 </head>
 <body>
