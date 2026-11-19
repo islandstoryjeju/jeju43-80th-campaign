@@ -310,9 +310,25 @@ textarea:focus,input[type=tel]:focus{border-color:var(--red);outline:0;box-shado
 .fab .btn{width:100%}
 @media (min-width:900px){.fab{display:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* 오픈 전 안내 화면 (2026-11-20 09:00 KST 자동 해제) */
+#gate{display:none}
+html.gated body>*:not(#gate){display:none!important}
+html.gated #gate{display:flex;min-height:100vh;min-height:100svh;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:32px 20px;text-align:center;background:var(--bg);color:var(--ink)}
+#gate img.duo{width:min(62vw,260px);height:auto}
+#gate h1{font-family:var(--f-display);font-size:clamp(1.35rem,5.6vw,2.2rem);line-height:1.35;letter-spacing:-.03em;margin:0;word-break:keep-all}
+#gate h1 em{font-style:normal;color:var(--red)}
+#gate p{margin:0;font-size:clamp(1rem,4.2vw,1.2rem);font-weight:600;color:var(--red-deep);background:var(--red-tint);border:1.5px solid var(--thread);border-radius:999px;padding:10px 22px;word-break:keep-all}
+#gate p span{display:inline-block;white-space:nowrap}
+#gate img.ci{height:30px;width:auto;margin-top:10px}
 </style>
+<script>
+(function(){var OPEN=Date.parse('2026-11-20T09:00:00+09:00');var ok=false;try{if(/[?&]preview=islandstory(&|$)/.test(location.search))sessionStorage.setItem('pv','1');ok=sessionStorage.getItem('pv')==='1';}catch(e){}
+if(!ok&&Date.now()<OPEN){document.documentElement.className+=' gated';var t=setInterval(function(){if(Date.now()>=OPEN){clearInterval(t);location.reload();}},15000);}})();
+</script>
 </head>
 <body>
+<div id="gate" role="main"><img class="duo" src="img/duo_logo.webp" alt="하영이와 동백이"><h1><em>2028년 제주4·3 제80주년</em><br>국민 의견수렴</h1><p><span>2026년 11월 20일(금)</span> <span>오전 9시에 열립니다</span></p><img class="ci" src="img/jeju_ci.png" alt="제주특별자치도"></div>
 
 <a class="skip" href="#survey">설문으로 바로가기</a>
 
