@@ -682,6 +682,8 @@ fetch('https://mmzxvtlhahqaurhsesfe.supabase.co/rest/v1/rpc/hit',{method:'POST',
   function go(i,focus){ if(sent||i>firstOpen()) return; step=i; save(); render(focus); }
   function fail(msg,el){err.textContent=msg; err.hidden=false; if(el) el.focus();}
 
+  const SENT='j43_80_sent';
+  const already=(()=>{if(!live)return false;try{if(sessionStorage.getItem('pv')==='1')return false;return !!localStorage.getItem(SENT);}catch(e){return false;}})();
   prev.onclick=()=>go(step-1,true);
   form.addEventListener('submit',async e=>{
     e.preventDefault();
@@ -696,6 +698,7 @@ fetch('https://mmzxvtlhahqaurhsesfe.supabase.co/rest/v1/rpc/hit',{method:'POST',
       try{const r=await fetch(CONFIG.endpoint,{method:'POST',headers:{'Content-Type':'application/json','apikey':CONFIG.key,'Prefer':'return=minimal'},body:JSON.stringify(payload)}); if(!r.ok) throw 0;}
       catch(x){next.disabled=false; next.textContent='의견 보내기'; return fail('보내지 못했습니다. 잠시 뒤 다시 눌러 주세요.',next);}
       next.disabled=false;
+      try{localStorage.setItem(SENT,new Date().toISOString().slice(0,10));}catch(x){}
     }
     finish();
   });
@@ -722,6 +725,10 @@ fetch('https://mmzxvtlhahqaurhsesfe.supabase.co/rest/v1/rpc/hit',{method:'POST',
   document.addEventListener('focusout',()=>{typing=false; fabSync();});
 
   render(false);
+  if(already){sent=true; ans=ans.map(()=>[]); form.hidden=true; $('#done').hidden=false; $('#mine').hidden=true;
+    $('#done h3').textContent='이미 참여해 주셨습니다';
+    $('#done h3').nextElementSibling.textContent='소중한 의견 감사합니다. 설문은 기기 한 대에서 한 번만 참여할 수 있습니다. 주변에도 널리 알려 주세요.';
+    paint(); $$('.bloom .p').forEach(p=>p.classList.add('on'));}
 })();
 </script>
 
